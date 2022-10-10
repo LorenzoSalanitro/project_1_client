@@ -38,7 +38,8 @@ public class ClientStr {
     }
 
     public void comunicate()
-    {
+    {   
+        for(;;)
         try {
             System.out.println("Insert string "+ '\n');
             user = keyboard.readLine();
@@ -46,8 +47,13 @@ public class ClientStr {
             output.writeBytes(user + '\n');
             received = input.readLine();
             System.out.println("server feedback" + '\n'+ received);
-            System.out.println("CLIENT : execution ended");
-            mysocket.close();
+            if(user.equals("END"))
+            {
+                System.out.println("CLIENT : execution ended");
+                mysocket.close();
+                break;
+            }
+           
 
         } catch (Exception e) {
             
