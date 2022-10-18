@@ -53,6 +53,12 @@ public class ClientStr {
                 mysocket.close();
                 break;
             }
+            else if(user.equals("CLOSE"))
+            {
+                System.out.println("server chiuso");
+                mysocket.close();
+                break;
+            }
            
 
         } catch (Exception e) {
